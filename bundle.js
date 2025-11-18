@@ -4824,7 +4824,7 @@ async function PayloadLoader(Pfile, Ptype) {
 function Init_Globals() {
   // Verify mem is initialized (should be initialized by make_arw)
   if (mem === null) {
-    window.log("ERROR: mem is not initialized. PSFree exploit may have failed.");
+    window.log("ERROR: mem is not initialized. PSFree exploit may have failed.\nPlease refresh page and try again...", "red");
     return 0;
   }
   syscall_array = [];
@@ -4866,7 +4866,7 @@ function checkPlatformIsSupported() {
 //================================================================================================
 async function doJBwithPSFreeLapseExploit() {
   if (!checkPlatformIsSupported()) {
-    window.log("Unsupported platform detected! Designed for PS4 9.00");
+    window.log("Unsupported platform detected! Designed for PS4 9.00", "red");
     /*
     window.log("Running DEMO application...\n");
     window.log("Starting PSFree Exploit...");
@@ -4885,10 +4885,12 @@ async function doJBwithPSFreeLapseExploit() {
     window.log('Lapse STAGE 4/5: Get arbitrary kernel read/write');
     window.log(' - Found reclaim sd at attempt: 0');
     window.log('Lapse STAGE 5/5: Patch kernel');
-    window.log("\nKernel exploit succeeded");
-    window.log("AIO fixes applied");
-    window.log("GoldHen loaded\n\nPSFree+Lapse Webkit by Kameleon\nAIO Fix by ABC");
-    window.log("\nATTENTION: This device is not jailbroken!!!\nThis screen is shown for DEMO purposes only");
+    window.log("\nKernel exploit succeeded", "green");
+    window.log("AIO fixes applied", "green");
+    window.log("GoldHen loaded", "green");
+    window.log("\nPSFree+Lapse Webkit by Kameleon\nAIO Fix by ABC");
+    window.log("\nATTENTION: This device is not jailbroken!!!","red");
+    window.log("This screen is shown for DEMO purposes only");
     */
     return;
   }
@@ -4908,7 +4910,7 @@ async function doJBwithPSFreeLapseExploit() {
     await make_arw(rdr, view2, pop);
     window.log("Achieved Arbitrary R/W\n");
   } catch (error) {
-    window.log("An error occured during PSFree\nPlease refresh page and try again...\nError definition: " + error);
+    window.log("An error occured during PSFree\nPlease refresh page and try again...\nError definition: " + error, "red");
     return;
   }
   window.log("Starting Lapse Kernel Exploit...");
@@ -4937,7 +4939,7 @@ async function doJBwithPSFreeLapseExploit() {
     let jb_step_status;
     jb_step_status = Init_Globals();
     if (jb_step_status !== 1) {
-      window.log("Global variables not properly initialized. Please restart console and try again...");
+      window.log("Global variables not properly initialized. Please restart console and try again...", "red");
       return;
     }
     await lapse_init();
@@ -4995,25 +4997,26 @@ async function doJBwithPSFreeLapseExploit() {
     for (const sd of sds) {
       close(sd);
     }
-    window.log("\nKernel exploit succeeded");
+    window.log("\nKernel exploit succeeded", "green");
     await sleep(500); // Wait 500ms
     // Inject aio_patches payload
     jb_step_status = await PayloadLoader("aio_patches.bin", 0); // Read payload from Byte array
     if (jb_step_status !== 1) {
-      window.log("Failed to load AIO fix!\nPlease restart console and try again...");
+      window.log("Failed to load AIO fix!\nPlease restart console and try again...", "red");
       return;
     }
-    window.log("AIO fixes applied");
+    window.log("AIO fixes applied", "green");
     await sleep(500); // Wait 500ms
     // Inject HEN payload
     jb_step_status = await PayloadLoader("payload.bin", 1); // Read payload from .bin file
     if (jb_step_status !== 1) {
-      window.log("Failed to load HEN!\nPlease restart console and try again...");
+      window.log("Failed to load HEN!\nPlease restart console and try again...", "red");
       return;
     }
-    window.log("GoldHen loaded\n\nPSFree+Lapse Webkit by Kameleon\nAIO Fix by ABC");
+    window.log("GoldHen loaded", "green");
+    window.log("\nPSFree+Lapse Webkit by Kameleon\nAIO Fix by ABC");
   } catch (error) {
-    window.log("An error occured during Lapse\nPlease restart console and try again...\nError definition: " + error);
+    window.log("An error occured during Lapse\nPlease restart console and try again...\nError definition: " + error, "red");
   }
 }
 // Make function globally accessible
