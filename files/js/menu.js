@@ -65,7 +65,7 @@ var menuData = {
         "PL-Ver": "Menu Info:",
         "PL-Desc": "Contains tools to do various tasks and change things on your PS4.",
         "Icon": "&#xf30f;",
-        "FW": ["9.00","8.xx","7.xx"]
+        "FW": ["9.xx","8.xx","7.xx"]
       },
       {
         "PL-Title": "PSFree/Lapse Fix",
@@ -128,7 +128,7 @@ var menuData = {
         "PL-Ver": "Menu Info:",
         "PL-Desc": "** More payloads will be added here soon... **<br>Contains various payloads to backup all aspect of useful things on your PS4.<br><br>NOTE! These backups will only work on your current Profile and accountID!<br>If you plan to initialize or replace your HDD you must also make a backup of your existing profile using the official backup/restore app in system settings!",
         "Icon": "&#xf30f;",
-        "FW": ["9.00","8.xx","7.xx"]
+        "FW": ["9.xx","8.xx","7.xx"]
       },
       {
         "PL-Title": "Database Backup",
@@ -159,7 +159,7 @@ var menuData = {
         "PL-Ver": "Menu Info:",
         "PL-Desc": "** More payloads will be added here soon... **<br>Contains various payloads to restore all aspect of useful things on your PS4.",
         "Icon": "&#xf30f;",
-        "FW": ["9.00","8.xx","7.xx"]
+        "FW": ["9.xx","8.xx","7.xx"]
       },
       {
         "PL-Title": "Database Restore",
@@ -182,7 +182,7 @@ var menuData = {
         "PL-Ver": "Menu Info:",
         "PL-Desc": "Contains payloads to dump games from your PS4 <br>so that you can then build your own fake packages that you can install.",
         "Icon": "&#xf30f;",
-        "FW": ["9.00","8.xx","7.xx"]
+        "FW": ["9.xx","8.xx","7.xx"]
       },
       {
         "PL-Title": "Dump Game & Update",
@@ -343,4 +343,5 @@ var menuData = {
       }
     ]
   }
+
 }
