@@ -24,7 +24,7 @@ https://sinajet.github.io/psphive-lapse-2/index.html
 - **Leeful** ([GitHub](https://github.com/Leeful))  
   For creating the stunning and user-friendly PSPhive! UI that everyone loves.
 
-- **ABC** 
+- **Anonymous** 
   Original author and main developer of the Lapse exploit.
 
 - **Al-Azif** ([GitHub](https://github.com/al-azif))  
